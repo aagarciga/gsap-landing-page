@@ -1,0 +1,103 @@
+:root {
+  --color-primary: red;
+
+  --bg-url-1: url("./section.1.bg.jpg");
+  --bg-url-2: url("./section.2.bg.jpg");
+  --bg-url-3: url("./section.3.bg.jpg");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap");
+
+* {
+  /* outline: thin dashed var(--color-primary); */
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: white;
+  background: black;
+  font-family: "Comorant Garamont, serif";
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(1rem, 5vw, 5rem);
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  margin-right: -0.5rem;
+  color: hsl(0, 0, 80%);
+  width: 90vw;
+  max-width: 1200px;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  width: 100%;
+  z-index: 3;
+  height: 7rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(0.66rem, 2vw, 1rem);
+  letter-spacing: 0.5rem;
+  text-shadow: 0.1em 0.1em 0 hsl(23, 100%, 46%);
+}
+
+section {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  visibility: hidden;
+  will-change: transform;
+}
+
+section .outer,
+section .inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  will-change: transform;
+}
+
+section .bg {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+section .bg h1 {
+  z-index: 2;
+  text-shadow: 0 1px 0 hsl(23, 100%, 46%);
+}
+
+section .bg .clip-text {
+  overflow: hidden;
+}
+
+section:nth-of-type(1) .bg {
+  background-image: var(--bg-url-1);
+}
+
+section:nth-of-type(2) .bg {
+  background-image: var(--bg-url-2);
+}
+
+section:nth-of-type(3) .bg {
+  background-image: var(--bg-url-3);
+}
